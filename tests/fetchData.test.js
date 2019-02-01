@@ -1,9 +1,8 @@
-const adapter = require('axios/lib/adapters/http');
-const testObject = require('../fetchData');
-
 /**
  * @jest-environment node
  */
+
+const testObject = require('../fetchData');
 
 describe('getAllBooksDetails()', () => {
   it('should return the id of first json object = 10', async () => {
@@ -11,21 +10,12 @@ describe('getAllBooksDetails()', () => {
     expect(response.data.books[0].id).toEqual(10);
   });
 
-  it('should return status code 200', async () => {
-    const response = await testObject.getAllBooksDetails();
-    expect(response.statusCode).toEqual(200);
-  });
 });
 
 describe('getBookRatingById()', () => {
   it('should return 4.45 as the rating of the book with id 10', async () => {
-    const response = await testObject.getAllBooksDetails();
+    const response = await testObject.getBookRatingById(10);
     expect(response.data.rating).toEqual(4.45);
-  });
-
-  it('should return status code 200', async (done) => {
-    const response = await testObject.getAllBooksDetails();
-    expect(response.statusCode).toEqual(200);
   });
 });
 
@@ -39,10 +29,6 @@ describe('countWords()', () => {
     expect(groupedBookObjects).toEqual(testResult);
   });
 
-  it('should return status code 200', async (done) => {
-    const response = await testObject.getAllBooksDetails();
-    expect(response.statusCode).toEqual(200);
-  });
 });
 
 
