@@ -2,21 +2,21 @@
   "development": {
     "username": "Hemant_Sriteja",
     "password": null,
-    "database": "database_development",
+    "database": "books",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "Hemant_Sriteja",
     "password": null,
-    "database": "database_test",
+    "database": "books_tests",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "Hemant_Sriteja",
     "password": null,
-    "database": "database_production",
+    "database": "books",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

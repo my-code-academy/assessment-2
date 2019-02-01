@@ -1,4 +1,9 @@
+const adapter = require('axios/lib/adapters/http');
 const testObject = require('../fetchData');
+
+/**
+ * @jest-environment node
+ */
 
 describe('getAllBooksDetails()', () => {
   it('should return the id of first json object = 10', async () => {
@@ -30,7 +35,7 @@ describe('countWords()', () => {
     {"Author":"Sidney Sheldon","id":120,"Name":"Rage of Angels"}];
     const testResult = {"J K Rowling": [{"Author": "J K Rowling", "Name": "Harry Potter and the Sorcerers Stone (Harry Potter, #1)", 
     "id": 10}], "Sidney Sheldon": [{"Author": "Sidney Sheldon", "Name": "Rage of Angels", "id": 120}]};
-    const groupedBookObjects = testObject.countWords(test);
+    const groupedBookObjects = testObject.groupBooksByAuthor(test);
     expect(groupedBookObjects).toEqual(testResult);
   });
 
@@ -41,4 +46,3 @@ describe('countWords()', () => {
 });
 
 
-//NODE_ENV=test npm run migrationDown && NODE_ENV=test npm run migrationUp &&

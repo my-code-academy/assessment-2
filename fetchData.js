@@ -39,11 +39,12 @@ const addRating = async (allBooksData) => {
 const groupByAuthor = () => {
   const allBooksResponse = getAllBooksDetails().then(async (allBooksData) => {
     allBooksData = addRating(allBooksData.data.books).then((booksData) => {
-      console.log(groupBooksByAuthor(booksData));
+      //console.log(groupBooksByAuthor(booksData));
+      console.log(booksData);
     });
   });
 };
 
-groupByAuthor();
+//groupByAuthor();
 
-module.exports = {getAllBooksDetails, getBookRatingById, countWords: groupBooksByAuthor, groupByAuthor};
+module.exports = {getAllBooksDetails, getBookRatingById, addRating, groupBooksByAuthor, groupByAuthor};
